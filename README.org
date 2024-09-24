@@ -1,0 +1,18 @@
+#+title: =bitcoin-script-mode= - best way of working with Bitcoin Script in Emacs
+#+author: Velnbur (Kyrylo Baybula)
+
+* Installation
+
+Using =use-package=:
+
+#+begin_src emacs-lisp
+  (use-package bitcoin-script-mode
+    :mode "\\.bs\\'"
+    :commands
+    (bitcoin-script-mode-format-buffer
+     bitcoin-script-mode-format-region)
+    :init
+    (add-to-list 'company-backends #'bitcoin-script-mode--company-backend)
+    :bind
+    ("C-c C-f" . bitcoin-script-mode-format-buffer))
+#+end_src
